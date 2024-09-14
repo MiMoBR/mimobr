@@ -9,3 +9,7 @@
 // };
 
 // declare const window: WindowWithDataLayer;
+interface Window {
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+}
