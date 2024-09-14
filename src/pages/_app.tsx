@@ -3,17 +3,18 @@
 import { useEffect } from "react";
 import { AppProps } from "next/app";
 import TagManager from "react-gtm-module";
-
-declare global {
-  interface Window {
-    dataLayer: Record<string, any>[];
-  }
-}
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 const App = ({ Component, pageProps }: AppProps) => {
 
+  // const gtmId = process.env.GTM_ID;
+  // console.log(gtmId);
+
   useEffect(() => {
-    TagManager.initialize({ gtmId: `${process.env.gtmID}` });
+    TagManager.initialize({ gtmId: 'GTM-WV45BL3' });
+    // TagManager.initialize({ gtmId: process.env.GTM_ID });
+    
   }, []);
 
   return <Component {...pageProps} />;

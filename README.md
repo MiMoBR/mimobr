@@ -43,3 +43,54 @@ yarn add -D @types/gtag.js
 
 
 yarn add react-gtm-module --save
+
+
+## GTM
+1 - Download react-gtm-module
+
+2 - import TagManager from "react-gtm-module"; at _app.tsx
+
+3 - TagManager.initialize({ gtmId: 'GTM-WV45BL3' });
+
+4 - Declare at tsconfig.json 
+4.1 - Add 
+    {
+    "compilerOptions": {
+        "typeRoots": ["./src/types", "./node_modules/@types"]
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","src/types/**/*.d.ts"],
+    }
+
+5 - At globals.d.ts has to declare global datalayer
+5.1 - Add
+    declare global {
+        interface Window {
+        dataLayer: Record<string, any>[];
+        }
+    }
+    
+    export {}; 
+
+6 - Create a sample, just to test
+6.1 at index.tsx
+    const handleClick = () => {
+        if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+            event: 'click Cta Next',
+            category: 'aHref Click',
+            action: 'Follow Link',
+            label: 'Clink Event',
+            value: 1981
+        });
+        } else {
+        console.warn('dataLayer is not defined');
+        }
+    };
+
+  return (
+    <>
+      <NavBar/>
+          <a href='#' onClick={ () => handleClick()}>CLICK Event</a>
+      </main>
+    </>
+  )

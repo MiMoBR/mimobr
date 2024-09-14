@@ -1,46 +1,34 @@
-export const GA_TRACKING_ID = `${process.env.GA_MEASUREMENT_ID}`;
-
-// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-// https://developers.google.com/analytics/devguides/collection/gtagjs/events
-
-// Export Page View
-export const pageview = (url: URL) => {
-  window.gtag("config", GA_TRACKING_ID, {
-    page_path: url
-  });
-}
-
 // Define a type for event parameters
-interface EventTrackParams {
-  event_name: string;
-  event_category: string;
-  event_label?: string;
-  event_value?: number;
+type EventTrackParams = {
+  event: string;
+  category: string;
+  action: string;
+  label: string;
+  value: number;
 }
 
-// Export a function for tracking events
-export const eventTrack = ({ event_name, event_category, event_label, event_value }: EventTrackParams): void => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', event_name, {
-      event_category: event_category,
-      event_label: event_label,
-      event_value: event_value,
-    });
+// Export a function for tracking events 
+export const handleClick = (
+  event: string,
+  category: string,
+  action: string,
+  label: string,
+  value: number
+) => {
+  const params: EventTrackParams = {
+    event,
+    category,
+    action,
+    label,
+    value
+  };
+
+  if (typeof window !== 'undefined' && window.dataLayer) {
+    window.dataLayer.push(params);
+  } else {
+    console.warn('dataLayer is not defined');
   }
 }
-
-// Initialize Google Tag Manager (GTM)
-export const initGTM = (gtmId: string): void => {
-  if (typeof window !== 'undefined' && !window.gtag) {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
-    }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', gtmId);
-  }
-};
 
 //////////////////////////////////
 
