@@ -1,8 +1,9 @@
 'use client';
-
-import { useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect } from 'react';
 import { AppProps } from "next/app";
 import TagManager from "react-gtm-module";
+
 // import dotenv from 'dotenv';
 // dotenv.config();
 
