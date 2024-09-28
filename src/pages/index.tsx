@@ -1,5 +1,6 @@
-import NavBar from '@/common/components/Navbar/navbar';
-import { handleClick } from '@/common/utils/gtag';
+import NavBar from '@/components/navbar/navbar';
+import Footer from '@/components/footer/footer';
+import { handleClick } from '@/utils/gtag';
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ export default function Home() {
           
         </div>
       </main>
+      <Footer/>
     </>
   )
 }

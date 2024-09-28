@@ -1,5 +1,6 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/globals.css'
 import React, { useEffect } from 'react';
 import { AppProps } from "next/app";
 import TagManager from "react-gtm-module";

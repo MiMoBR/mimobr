@@ -1,25 +1,57 @@
-
-
+/* https://flatuicolors.com/palette/defo */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --gray_clouds: #ecf0f1;
+  --gray_silver: #bdc3c7;
+  --gray_concrete: #95a5a6;
+  --gray_asbestos: #7f8c8d;
+  --gray_wet_asphalt: #34495e;
+  --gray_midnight_blue: #2c3e50;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  color: var(--gray_midnight_blue);
+  text-align: left;
+  font-family: 'Roboto';
+  font-size: 100%;
+  line-height: 1.2;
+  background: var(--gray_silver);
+  -webkit-font-feature-settings: unset;
+  font-feature-settings: unset;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
