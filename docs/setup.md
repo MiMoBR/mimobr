@@ -7,6 +7,7 @@
 # Indent Customization
 .eslintrc.js
 .prettierrc
+# Cmd + Shift + P
 
 # UX Style
 https://react-bootstrap.netlify.app/docs/components/navbar/

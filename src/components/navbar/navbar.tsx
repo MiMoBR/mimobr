@@ -1,11 +1,8 @@
 import React from 'react';
 import style from './style.module.css';
-import { Button, Modal } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Link from 'next/link'
 
 export default function NavBar() {
 
