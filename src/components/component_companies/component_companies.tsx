@@ -13,7 +13,7 @@ export default function ComponentCompanies() {
     return (
         <>
             <Row>
-                <Col className={style.compoent_companies}>
+                <Col className={style.component_companies}>
                     <Image src={ToyotaLogo} alt="Mountains" className={style.picture_custom} />
                     <Image src={BovControlLogo} alt="Mountains" className={style.picture_custom} />
                     <Image src={CreditasLogo} alt="Mountains" className={style.picture_custom} />

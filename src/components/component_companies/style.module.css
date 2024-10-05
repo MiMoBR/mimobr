@@ -1,10 +1,10 @@
-.compoent_companies {
+.component_companies {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
     width: 100%;
     align-items: center;
-    background-color: var(--gray_clouds);
+    background-color: var(--gray_silver);
     border-bottom-left-radius: 3rem;
     border-bottom-right-radius: 3rem;
 }
@@ -12,7 +12,8 @@
 .picture_custom {
     height: fit-content;
     width: 70vw;
-    margin: 2rem;
+    filter: grayscale(100%);
+    padding: 1rem;
 }
 
 @media (min-width: 992px) {

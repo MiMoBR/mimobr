@@ -20,12 +20,12 @@
 body {
   margin: 0;
   padding: 0;
-  color: var(--gray_midnight_blue);
+  color: var(--gray_asbestos);
   text-align: left;
   font-family: 'Roboto';
   font-size: 100%;
   line-height: 1.2;
-  background: var(--gray_silver);
+  background: var(--gray_wet_asphalt);
   -webkit-font-feature-settings: unset;
   font-feature-settings: unset;
 }

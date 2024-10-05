@@ -21,3 +21,15 @@
 .component_navbar {
     background: var(--gray_silver) !important;
 }
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 var(--gray_midnight_blue) !important;
+}
+
+.navbar-toggler {
+    color: transparent !important;
+    background-color: var(--gray_midnight_blue) !important;
+    border: var(--bs-border-width) solid var(--gray_midnight_blue) !important;
+}
