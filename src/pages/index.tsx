@@ -5,6 +5,25 @@ import { handleClick } from '@/utils/gtag';
 
 export default function Home() {
 
+  const handlePurchase = () => {
+    // Send Purchase event to GA4
+    gtag('event', 'purchase', {
+      transaction_id: purchaseData.id, // Unique transaction ID
+      affiliation: 'Online Store',      // Store name
+      value: purchaseData.amount,        // Total value
+      currency: 'USD',                   // Currency (change as needed)
+      items: purchaseData.items.map(item => ({
+        item_name: item.name,
+        item_id: item.id,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+    });
+
+    // Perform additional purchase logic here (e.g., API call)
+    console.log('Purchase event sent to GA4:', purchaseData);
+  };
+
   return (
     <>
       <NavBar/>
