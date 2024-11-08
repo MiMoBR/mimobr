@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+        <script src="https://assets.adobedtm.com/6d8e00a15d8e/f95a5b2e64ec/launch-4c1c95261a08-development.min.js" async></script>
         </Head>
         <body>
           <Main />
