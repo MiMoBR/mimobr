@@ -1,7 +1,8 @@
 import NavBar from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
 import ComponentCompanies from '@/components/component_companies/component_companies';
-import { handleClick } from '@/utils/gtag';
+import { handleClick, handleViewPromotion } from '@/utils/gtag';
+import { useEffect } from 'react';
 
 export default function Home() {
 
@@ -24,24 +25,45 @@ export default function Home() {
   //   console.log('Purchase event sent to GA4:', purchaseData);
   // };
 
-  const handleViewPromotion = () => {
-    // Send Purchase event to GA4
-    gtag('event', '"view_promotion"', {
-      transaction_id: purchaseData.id, // Unique transaction ID
-      affiliation: 'Online Store',      // Store name
-      value: purchaseData.amount,        // Total value
-      currency: 'USD',                   // Currency (change as needed)
-      items: purchaseData.items.map(item => ({
-        item_name: item.name,
-        item_id: item.id,
-        price: item.price,
-        quantity: item.quantity,
-      })),
-    });
+  // const handleViewPromotion = () => {
+  //   if (window.gtag) {
+  //     window.gtag('event', 'view_promotion', {
+  //       creative_name: 'top',
+  //       etapa_jornada: 'busca_exploracao',
+  //       // Other parameters...
+  //     });
+  //   } else {
+  //     console.error('gtag is not available');
+  //   }
+  // };
+  
+  // useEffect(() => {
+  //   // This ensures that `gtag` is available when the component mounts
+  //   if (!window.gtag) {
+  //     console.error('Google Analytics script not loaded');
+  //   }
+  // }, []);
 
-    // Perform additional purchase logic here (e.g., API call)
-    console.log('Purchase event sent to GA4:', purchaseData);
-  };
+    
+  // const handleViewPromotion = () => {
+  //   // Send Purchase event to GA4
+  //   window.gtag('event', '"view_promotion"', {
+  //     creative_name: "top",
+  //     etapa_jornada: "busca_exploracao",                 
+  //     items: ({
+  //       item_category: "feminino",
+  //       item_id: "1142914",
+  //       item_name: "blusa mini tee estampa georgia",
+  //       price: 69.9,
+  //       quantity: 1
+  //     }),
+  //     page_type: "home",
+  //     section_name: "banner"
+  //   });
+
+  //   // Perform additional purchase logic here (e.g., API call)
+  //   console.log('Purchase event sent to GA4 -  view promotion');
+  // };
 
   return (
     <>
@@ -65,14 +87,17 @@ export default function Home() {
           <br/>
           <a href='#' 
             onClick={() => handleViewPromotion(
-              'click v3', 
-              'ahref v3', 
-              'link v3', 
-              'CLICK v3', 
-              1978
+              'view_promotion',
+              'top',
+              'busca_exploracao',
+              'home',
+              'banner',
+              'feminino',
+              '1142914',
+              69.9
             )}
           >
-            Click Event
+            Click View Promotion
           </a>
         </div>
       </main>
